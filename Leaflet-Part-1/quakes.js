@@ -146,7 +146,7 @@ function createMap(quakes) {
 
   // Create map legend.
   var mapLegend = L.control({ position: "bottomright" });
-  legend.onAdd = function() {
+  mapLegend.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
       limits = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100];
     var colors = ["#29451C","#314C20","#3A5223","#435827","#4D5E2A","#57652E","#616B31","#6C7135","#767739","#7C773D","#827741","#89764A","#907653","#96775C","#9D7865","#A47A6E","#AA7C77","#B18182","#B78A91","#BE939F","#C49DAD"];

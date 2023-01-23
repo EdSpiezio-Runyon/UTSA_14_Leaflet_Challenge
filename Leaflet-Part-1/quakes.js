@@ -96,12 +96,12 @@ function createFeatures(quakeData) {
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {
         opacity: 1,
-        fillOpacity: 1,
+        fillOpacity: 0.5,
         fillColor: dotColor(feature.geometry.coordinates[2]),
         color: "#000000",
         radius: dotSize(feature.properties.mag),
         stroke: true,
-        weight: 0.5
+        weight: 0.3
       })
     }
   });
@@ -145,11 +145,11 @@ function createMap(quakes) {
   L.control.layers(baseMaps, overlayMap).addTo(loadMap);
 
   // Create map legend.
-  var mapLegend = L.control({ position: "bottomright" });
-  mapLegend.onAdd = function() {
+  var legend = L.control({ position: "bottomright" });
+  legend.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
       limits = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100];
-    var colors = ["#29451C","#314C20","#3A5223","#435827","#4D5E2A","#57652E","#616B31","#6C7135","#767739","#7C773D","#827741","#89764A","#907653","#96775C","#9D7865","#A47A6E","#AA7C77","#B18182","#B78A91","#BE939F","#C49DAD"];
+    var colors = ["#357210","#437D13","#538716","#649119","#769B1C","#89A420","#9DAE23","#B2B727","#C0B82B","#C8B330","#D1AE34","#D5A03D","#D89346","#DC884E","#DF7E58","#E27661","#E56F6A","#E8747E","#EB7E95","#EE88AA","#F092BD"]
     var labels = [];
     
     // Define minimum and maximum values.
